@@ -1,0 +1,182 @@
+:root{
+    --primary-color:#2b2773;
+    --secondary-color:#171482;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-color:var(--primary-color);
+
+}
+.container{
+    margin:50px auto;
+    width: 90%;
+    max-width: 600px;
+}
+.plus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 30px;
+    border: 1px solid #d8d6ff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color:#d8d6ff;
+    transition: 400ms;
+}
+.plus:hover{
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+.books{
+    margin-top: 40px;
+    
+}
+.book-card{
+    display: flex;
+    flex-wrap: wrap;
+    color: #d8d6ff;
+    background-color:var(--secondary-color) ;
+    padding: 20px ;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.book-card .text{
+    width: 100%;
+}
+
+.book-card h2{
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #f0edfc;
+}
+.book-card .info{
+    margin: 5px 0;
+    font-size: 14px;
+
+}
+
+/* .book-card .read,  */
+.book-card .read, .book-card .del{
+    margin:20px 0;
+}
+.read input{
+    position: relative;
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    background-color: #f0edfc;
+    outline: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+.read input:checked{
+   background-color: var(--primary-color);
+}
+.read input::before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    background-color: #fff;
+    transition: 0.3s;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px (0, 0, 0.2);
+}
+.read input:checked::before{
+    left: 30px;
+}
+.book-card.completed{
+    opacity: 0.5;
+}
+.book-card .del{
+    margin-left: 40px;
+}
+button{
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.add-book{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    top: -100vh;
+    transition: 0.3s;
+}
+.add-book.active{
+    top: 0;
+}
+form{
+    background-color: var(--secondary-color);
+    width: 90%;
+    height: 500px;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    color:#f0edfc;
+    flex-wrap: wrap;
+    padding: 20px 40px;
+    position: relative;
+}
+form #close{
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+form label{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+form input{
+    width: 100%;
+    margin-top: 8px;
+    color: inherit;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #f0edfc;
+    background-color: transparent;
+    outline: none;
+    font-size: 15px;
+    
+
+}
+form button{
+    width: 100%;
+}
+form input::placeholder{
+    color: #d0d0d0;
+}
+form>div{
+    width: 100%;
+}
